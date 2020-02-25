@@ -10,8 +10,8 @@
 			<RowDefinition/>
 			<RowDefinition/>
 		</Grid.RowDefinitions>
-		<TextBox x:Name="F" FontSize="28" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsTabStop="True" IsEnabled="True" TabIndex="0"  TextChanged="B" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" AutoWordSelection="True"/>
-		<TextBox x:Name="d" FontSize="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" PreviewMouseDoubleClick="H"  BorderBrush="Transparent" Grid.Row="1" IsReadOnly="True" IsTabStop="False" AllowDrop="False" TextWrapping="Wrap" ToolTip="Double Tap to copy to clipboard"/>
+		<TextBox x:Name="F" FontSize="28" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" IsTabStop="True" IsEnabled="True" TabIndex="0"  TextChanged="B" AcceptsReturn="True" AcceptsTab="True" AutoWordSelection="True"/>
+		<TextBox x:Name="d" FontSize="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" IsTabStop="False" PreviewMouseDoubleClick="H"  BorderBrush="Transparent" Grid.Row="1" IsReadOnly="True"  AllowDrop="False"  ToolTip="Double Tap to copy to clipboard"/>
 		<Grid Margin="3">
 			<CheckBox Name="G" HorizontalAlignment="Right" VerticalAlignment="Top" Content="Extended" Checked="B" Unchecked="B" ToolTip="Click me extend the substiution set" />
 		</Grid>

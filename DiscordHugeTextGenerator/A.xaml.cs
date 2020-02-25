@@ -1,22 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace DiscordHugeTextGenerator {
 	public partial class A : Window {
-		public A() =>
-			InitializeComponent();
-
 		private const string g = ": ";
 		private const char j = ':';
+		public A() => InitializeComponent();
 		private readonly Dictionary<char, string> e = new Dictionary<char, string>() {
-			{'#',":hash:" },
-			{'*',":asterisk:" },
-			{'/',":french_bread:" },
-			{'!',":exclamation:" },
-			{'?',":question:" },
-			{' ',"   " },
+			{'#', ":hash:" },
+			{'*', ":asterisk:" },
+			{'/', ":french_bread:" },
+			{'!', ":exclamation:" },
+			{'?', ":question:" },
+			{' ', "   " },
 		};
 		private readonly Dictionary<string, string> h = new Dictionary<string, string>() {
 			{"up!", "up"},
@@ -59,43 +56,40 @@ namespace DiscordHugeTextGenerator {
 		private void B(object _, object __) {
 			var a = new StringBuilder();
 			var b = F.Text.ToLower();
-			if (G.IsChecked != true || b.Length < 2) {
+			if (G.IsChecked != true)
 				foreach (var c in b)
 					B(c, a);
-			}
-			else {
-				for (var c = 0; c < b.Length; c++) {
-					c = B(a, b, c);
-				}
-			}
+			else
+				for (var c = 0; c < b.Length; c = B(a, b, c))
+					;
 			d.Text = a.ToString();
 		}
 
 		private int B(StringBuilder a, string b, int c) {
 			if (c + 1 == b.Length)
 				B(b[c], a);
-			else if (B(b, c, out var e, a))
-				c = e - 1;
+			else if (B(b, c, out var d, a))
+				c = d;
 			else {
-				var d = "" + b[c] + b[c + 1];
-				if (f.Contains(d)) {
-					a.Append(j).Append("flag_").Append(d).Append(g);
+				var e = "" + b[c] + b[c + 1];
+				if (f.Contains(e)) {
+					a.Append(j).Append("flag_").Append(e).Append(g);
 					c++;
 				}
 				else
 					B(b[c], a);
 			}
-
 			return c;
 		}
 
 		private bool B(string a, int b, out int c, StringBuilder d) {
+			c = b - 1;
 			var e = a.Length - b;
 			foreach (var f in h.Keys) {
 				if (f.Length <= e) {
 					if (a.Substring(b, f.Length) == f) {
 						d.Append(j).Append(h[f]).Append(g);
-						c = b + f.Length;
+						c += f.Length;
 						return true;
 					}
 				}
@@ -104,12 +98,11 @@ namespace DiscordHugeTextGenerator {
 				if (f.Length <= e) {
 					if (a.Substring(b, f.Length) == f) {
 						d.Append(j).Append(f).Append(g);
-						c = b + f.Length;
+						c += f.Length;
 						return true;
 					}
 				}
 			}
-			c = 0;
 			return false;
 		}
 		private void B(char a, StringBuilder b) {
