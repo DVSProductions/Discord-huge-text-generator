@@ -79,7 +79,7 @@ namespace DiscordHugeTextGenerator {
 				else
 					B(b[c], a);
 			}
-			return c;
+			return c+1;
 		}
 
 		private bool B(string a, int b, out int c, StringBuilder d) {
